@@ -1,11 +1,6 @@
 *.pyc
 .vscode
 .git---
-offline_pkg
-output_log
-output
-output_ab
-output_final
 build
 diff_rasterization/diff_rast.egg-info
 diff_rasterization/dist

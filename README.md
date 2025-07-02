@@ -26,7 +26,7 @@ conda activate gaussian_splatting
 cd InstanceGaussian/submodules
 pip install diff-gaussian-rasterization
 ```
----
+
 
 ## 1. Data preparation
 The files are as follows:
@@ -59,7 +59,7 @@ The files are as follows:
 + **Mask and Language Feature Extraction Details**
     + We use the tools provided by LangSplat to extract the SAM mask and CLIP features, but we only use the large-level mask.
 
----
+
 
 ## 3. Training
 ### 3.1 ScanNet
@@ -88,10 +88,6 @@ python attach_lang_feature_lerf.py -s <path to COLMAP or NeRF Synthetic dataset>
 
 + Evaluate text-guided segmentation performance on ScanNet for 19, 15, and 10 categories.
     ```shell
-    # unzip the pre-extracted text features by OpenClip
-    cd assets
-    unzip text_features.zip
-
     # 1. please check the `file_path` and `mapping_file` are correct
     # 2. specify `target_id` as 19, 15, or 10 categories.
     python eval_semantic_seg.py
@@ -107,12 +103,10 @@ python attach_lang_feature_lerf.py -s <path to COLMAP or NeRF Synthetic dataset>
     ex: python eval_lerf_iou.py -s data/lerf/ramen -m output/lerf/ramen -p output/lerf/ramen
     ```
     > The metrics may be unstable due to the limited evaluation samples of LeRF.
----
 
 ## 5. Acknowledgements
 We are quite grateful for [3DGS](https://github.com/graphdeco-inria/gaussian-splatting), [LangSplat](https://github.com/minghanqin/LangSplat), [SAM](https://segment-anything.com/) , and [OpenGaussian](https://github.com/yanmin-wu/OpenGaussian).
 
----
 
 ## 6. Citation
 
@@ -125,7 +119,7 @@ We are quite grateful for [3DGS](https://github.com/graphdeco-inria/gaussian-spl
 }
 ```
 
----
+
 
 ## 7. Contact
 If you have any question about this project, please feel free to contact [Haijie Li]: lhj69314[AT]163.com
