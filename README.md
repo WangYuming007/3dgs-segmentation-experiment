@@ -8,7 +8,7 @@
 [Haijie Li](https://scholar.google.com/citations?hl=zh-CN&user=QjNgc4MAAAAJ)<sup>1</sup>, [Yanmin Wu](https://yanmin-wu.github.io/)<sup>1</sup>, [Jiarui Meng](https://scholar.google.com/citations?user=N_pRAVAAAAAJ&hl=en&oi=ao)<sup>1</sup>,  [Qiankun Gao](https://gaoqiankun.com/)<sup>1</sup>, [Zhiyao Zhang]<sup>2</sup>
 [Ronggang Wang](https://www.ece.pku.edu.cn/info/1046/2147.htm)<sup>1</sup>, [Jian Zhang](https://jianzhang.tech/cn/)<sup>1</sup>
 
-
+<sup>1</sup>Peking University, <sup>2</sup>Northeastern University
 </div>
 
 ## 0. Installation
