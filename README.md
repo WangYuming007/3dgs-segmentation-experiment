@@ -64,7 +64,7 @@ The files are as follows:
 ## 3. Training
 ### 3.1 ScanNet
 ```shell
-# Instance segmentation.
+# Train for instance feature, and execute instance segmentation.
 python train_scannet.py -s <path to COLMAP or NeRF Synthetic dataset> -m <path to outputpath> -p <path to pretrained_model>
 # Attach the semantic feature into instance. Semantic segmentation.
 python attach_lang_feature_scannet.py -s <path to COLMAP or NeRF Synthetic dataset> -m <path to outputpath> -p <path to pretrained_model>
@@ -72,7 +72,7 @@ python attach_lang_feature_scannet.py -s <path to COLMAP or NeRF Synthetic datas
 
 ### 3.2 LeRF_ovs
 ```shell
-# Instance segmentation.
+# Train for instance feature, and execute instance segmentation.
 python train_lerf.py -s <path to COLMAP or NeRF Synthetic dataset> -m <path to outputpath> -p <path to pretrained_model>
 # Attach the semantic feature into instance. Semantic segmentation.
 python attach_lang_feature_lerf.py -s <path to COLMAP or NeRF Synthetic dataset> -m <path to outputpath> -p <path to pretrained_model>
@@ -100,7 +100,7 @@ python attach_lang_feature_lerf.py -s <path to COLMAP or NeRF Synthetic dataset>
     # 2. specify the scene name: figurines, teatime, ramen, waldo_kitchen
     python eval_lerf_iou.py -s <path to COLMAP or NeRF Synthetic dataset> -m <path to outputpath> -p <path to pretrained_model>
 
-    ex: python eval_lerf_iou.py -s data/lerf/ramen -m output/lerf/ramen -p output/lerf/ramen
+    # ex: python eval_lerf_iou.py -s data/lerf/ramen -m output/lerf/ramen -p output/lerf/ramen
     ```
     > The metrics may be unstable due to the limited evaluation samples of LeRF.
 
@@ -122,4 +122,4 @@ We are quite grateful for [3DGS](https://github.com/graphdeco-inria/gaussian-spl
 
 
 ## 7. Contact
-If you have any question about this project, please feel free to contact [Haijie Li]: lhj69314[AT]163.com
+If you have any question about this project, please feel free to contact [Haijie Li]: lhj69314@163.com
