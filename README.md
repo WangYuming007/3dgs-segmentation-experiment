@@ -97,21 +97,16 @@ python attach_lang_feature_lerf.py -s <path to COLMAP or NeRF Synthetic dataset>
     python eval_semantic_seg.py
     ```
 
-### 4.4 LeRF Evalution (Open-Vocabulary Object Selection in 3D Space)
+### 4.2 LeRF Evalution (Open-Vocabulary Object Selection in 3D Space)
 + (1) First, render text-selected 3D Gaussians into multi-view images.
     ```shell
-    # unzip the pre-extracted text features
-    cd assets
-    unzip text_features.zip
-
     # 1. specify the model path using -m
     # 2. specify the scene name: figurines, teatime, ramen, waldo_kitchen
     python eval_lerf_iou.py -s <path to COLMAP or NeRF Synthetic dataset> -m <path to outputpath> -p <path to pretrained_model>
+
+    ex: python eval_lerf_iou.py -s data/lerf/ramen -m output/lerf/ramen -p output/lerf/ramen
     ```
     > The metrics may be unstable due to the limited evaluation samples of LeRF.
-    ```
-
-
 ---
 
 ## 5. Acknowledgements
