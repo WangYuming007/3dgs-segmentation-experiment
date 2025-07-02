@@ -1,0 +1,9 @@
+setup.py
+ops/__init__.py
+ops.egg-info/PKG-INFO
+ops.egg-info/SOURCES.txt
+ops.egg-info/dependency_links.txt
+ops.egg-info/top_level.txt
+src/cuda.cu
+src/softgroup_api.cpp
+src/softgroup_ops.cpp
