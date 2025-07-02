@@ -65,17 +65,17 @@ The files are as follows:
 ### 3.1 ScanNet
 ```shell
 # Instance segmentation.
-python train_scannet.py -s <path to COLMAP or NeRF Synthetic dataset> -m <path to outputpath> -p <path to pretrained_model> -r <Changes the resolution of the loaded images before training.>
+python train_scannet.py -s <path to COLMAP or NeRF Synthetic dataset> -m <path to outputpath> -p <path to pretrained_model>
 # Attach the semantic feature into instance. Semantic segmentation.
-python attach_lang_feature_scannet.py -s <path to COLMAP or NeRF Synthetic dataset> -m <path to outputpath> -p <path to pretrained_model> -r <Changes the resolution of the loaded images before training>
+python attach_lang_feature_scannet.py -s <path to COLMAP or NeRF Synthetic dataset> -m <path to outputpath> -p <path to pretrained_model>
 ```
 
 ### 3.2 LeRF_ovs
 ```shell
 # Instance segmentation.
-python train_lerf.py -s <path to COLMAP or NeRF Synthetic dataset> -m <path to outputpath> -p <path to pretrained_model> -r <Changes the resolution of the loaded images before training>
+python train_lerf.py -s <path to COLMAP or NeRF Synthetic dataset> -m <path to outputpath> -p <path to pretrained_model>
 # Attach the semantic feature into instance. Semantic segmentation.
-python attach_lang_feature_lerf.py -s <path to COLMAP or NeRF Synthetic dataset> -m <path to outputpath> -p <path to pretrained_model> -r <Changes the resolution of the loaded images before training>
+python attach_lang_feature_lerf.py -s <path to COLMAP or NeRF Synthetic dataset> -m <path to outputpath> -p <path to pretrained_model>
 ```
 ## 4. Render & Eval & Downstream Tasks
 
