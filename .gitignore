@@ -2,12 +2,12 @@
 .vscode
 .git---
 build
-diff_rasterization/diff_rast.egg-info
-diff_rasterization/dist
+# diff_rasterization/diff_rast.egg-info
+# diff_rasterization/dist
 tensorboard_3d
 screenshots
 *.ipynb_checkpoints
-submodules/
+# submodules/
 # assets/
 *.npz
 *.bundle
