@@ -1,0 +1,11 @@
+numpy<2
+plyfile
+tqdm
+imageio
+plyfile
+torch_scatter
+jaxtyping
+opencv-python==4.11.0.86
+open3d
+bitarray
+einops

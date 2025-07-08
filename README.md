@@ -18,10 +18,14 @@ git clone https://github.com/lhj-git/InstanceGasuusian_code.git
 ```
 Then install the dependencies:
 ```shell
-conda env create --file environment.yml
-conda activate gaussian_splatting
+conda create -n InstanceGS python=3.10
+conda activate InstanceGS
 
-# the rasterization lib is modified from Scaffold-GS.
+# Install the pytorch according to your cuda version.
+conda install pytorch==2.0.0 torchvision==0.15.0 torchaudio==2.0.0 pytorch-cuda=11.8 -c pytorch -c nvidia
+pip install -r requirement.txt
+
+# The rasterization lib is modified from Scaffold-GS.
 cd InstanceGaussian/submodules
 pip install diff-gaussian-rasterization
 pip install simple-knn
