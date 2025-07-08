@@ -99,6 +99,8 @@ python attach_lang_feature_lerf.py -s <path to COLMAP or NeRF Synthetic dataset>
     python eval_semantic_seg.py
     ```
 
++ Our pretrained models of scannet are in .ckpt/
+
 ### 4.2 LeRF Evalution (Open-Vocabulary Object Selection in 3D Space)
 + (1) First, render text-selected 3D Gaussians into multi-view images.
     ```shell
