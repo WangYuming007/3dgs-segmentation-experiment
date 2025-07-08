@@ -25,7 +25,7 @@ from pathlib import Path
 from plyfile import PlyData, PlyElement
 from utils.sh_utils import SH2RGB
 from scene.gaussian_model import BasicPointCloud
-from utils.virtual_camera import *
+# from utils.virtual_camera import *
 
 class CameraInfo(NamedTuple):
     uid: int
@@ -289,7 +289,7 @@ def read_files_with_specific_extension(folder_path, extension):
 
 def readNerfSyntheticInfo(path, white_background, eval, extension=".png"):
     print("Reading Training Transforms")
-    train_cam_infos = readCamerasFromTransforms(path, "transforms.json", white_background, extension)
+    train_cam_infos = readCamerasFromTransforms(path, "transforms_train.json", white_background, extension)
     llffhold = 8
     
     if not eval:

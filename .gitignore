@@ -11,3 +11,4 @@ screenshots
 # assets/
 *.npz
 *.bundle
+output

@@ -13,9 +13,8 @@
 
 ## 0. Installation
 
-The installation of OpenGaussian is similar to [3D Gaussian Splatting](https://github.com/graphdeco-inria/gaussian-splatting).
 ```shell
-git clone https://github.com/yanmin-wu/OpenGaussian.git
+git clone https://github.com/lhj-git/InstanceGasuusian_code.git
 ```
 Then install the dependencies:
 ```shell
@@ -25,6 +24,7 @@ conda activate gaussian_splatting
 # the rasterization lib is modified from Scaffold-GS.
 cd InstanceGaussian/submodules
 pip install diff-gaussian-rasterization
+pip install simple-knn
 ```
 
 
@@ -51,13 +51,14 @@ The files are as follows:
 │	│	├── label/ (Optional, evaluate IOU)
 ```
 + **[1] Prepare ScanNet Data**
-    + You can directly download OpenGaussian pre-processed data: [**OneDrive**](https://onedrive.live.com/?authkey=%21AIgsXZy3gl%5FuKmM&id=744D3E86422BE3C9%2139813&cid=744D3E86422BE3C9). Please unzip the `color.zip` and `language_features.zip` files. Your need to modify the SAM_level in train_scannet.py or train_lerf.py from 3 to 0.
+    + You can directly download our pre-processed data: [**OneDrive**](https://1drv.ms/f/c/113a4b22ca8cb1a3/Et1cnxmjyRJBkU-KFWPDoU0BQzXNQsC-EkEZHPAUfLsC6A?e=CXOYe0). Please unzip the `scannet.tar.gz` files.
     + The ScanNet dataset requires permission for use, following the [ScanNet instructions](https://github.com/ScanNet/ScanNet) to apply for dataset permission.
-    + You can follow [**Langsplat**](https://github.com/minghanqin/LangSplat) to extract the language feature. 
+    + Or you can follow [**Langsplat**](https://github.com/minghanqin/LangSplat) to extract the language feature. 
 + **[2] Prepare lerf_ovs Data**
-    + You can directly download our pre-processed data: [**OneDrive**](https://onedrive.live.com/?authkey=%21AIgsXZy3gl%5FuKmM&id=744D3E86422BE3C9%2139815&cid=744D3E86422BE3C9) (re-annotated by LangSplat). Your need to modify the SAM_level in train_scannet.py or train_lerf.py from 3 to 0.
+    + You can directly download our pre-processed data: [**OneDrive**](https://1drv.ms/f/c/113a4b22ca8cb1a3/Et1cnxmjyRJBkU-KFWPDoU0BQzXNQsC-EkEZHPAUfLsC6A?e=CXOYe0). Please unzip the `lerf.tar.gz` files.
+    + Or you download the [**LeRF**](https://drive.google.com/drive/folders/1vh0mSl7v29yaGsxleadcj-LCZOE_WEWB?usp=sharing) data set and follow [**Langsplat**](https://github.com/minghanqin/LangSplat) to extract the language feature. 
 + **Mask and Language Feature Extraction Details**
-    + We use the tools provided by LangSplat to extract the SAM mask and CLIP features, but we only use the large-level mask.
+    + We use the tools provided by [**Langsplat**](https://github.com/minghanqin/LangSplat) to extract the SAM mask and CLIP features, but we only use the large-level mask.
 
 
 
@@ -65,6 +66,7 @@ The files are as follows:
 ### 3.1 ScanNet
 ```shell
 # Train for instance feature, and execute instance segmentation.
+# Remember to set -r 2 to reach the performance reported in paper.
 python train_scannet.py -s <path to COLMAP or NeRF Synthetic dataset> -m <path to outputpath> -p <path to pretrained_model>
 # Attach the semantic feature into instance. Semantic segmentation.
 python attach_lang_feature_scannet.py -s <path to COLMAP or NeRF Synthetic dataset> -m <path to outputpath> -p <path to pretrained_model>

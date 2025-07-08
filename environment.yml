@@ -20,7 +20,7 @@ dependencies:
   - open3d
   - bitarray
   - einops
-  - pytorch3d
+  # - pytorch3d
   - pip:
     - submodules/diff-gaussian-rasterization
     - submodules/simple-knn
