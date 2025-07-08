@@ -12,5 +12,3 @@ screenshots
 *.npz
 *.bundle
 output
-environment.yml
-render.py

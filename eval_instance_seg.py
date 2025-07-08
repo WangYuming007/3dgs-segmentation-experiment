@@ -35,15 +35,15 @@ def read_labels_from_ply(file_path):
     labels = vertex_data['label']
     return points, labels
 
-# dataset_names = [  'scene0000_00', 'scene0062_00', 'scene0070_00', 'scene0097_00', 'scene0140_00', 
-#                     'scene0200_00', 'scene0347_00', 'scene0400_00', 'scene0590_00', 'scene0645_00']
-dataset_names = ["scene0000_00"]# Modify if you need
+dataset_names = [  'scene0000_00', 'scene0062_00', 'scene0070_00', 'scene0097_00', 'scene0140_00', 
+                    'scene0200_00', 'scene0347_00', 'scene0400_00', 'scene0590_00', 'scene0645_00']
+# dataset_names = ["scene0000_00"]# Modify if you need
 miousss = []
 maccsss = []
 maccsss50 = []
 for pt, dataset_name in enumerate(dataset_names):
     GT_pcd_path = f"/gdata/cold1/ScannetV2/data/scans/{dataset_name}"# Modify if you need
-    cluster_result = 'output/scannet/'+dataset_name+'/cluster_result.pt'
+    cluster_result = 'ckpt/'+dataset_name+'/cluster_result.pt'
 
     file_path = os.path.join(GT_pcd_path, f"{dataset_name}_vh_clean_2.labels.ply")
     points, labels = read_labels_from_ply(file_path)
