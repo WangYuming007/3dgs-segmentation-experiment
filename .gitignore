@@ -9,6 +9,6 @@ screenshots
 *.ipynb_checkpoints
 # submodules/
 # assets/
-*.npz
+# *.npz
 *.bundle
 output

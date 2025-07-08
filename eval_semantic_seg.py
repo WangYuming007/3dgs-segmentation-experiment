@@ -83,7 +83,7 @@ if __name__ == "__main__":
     maccsss = []
     for scan_name in scene_list:
         file_path = f"/gdata/cold1/ScannetV2/data/scans/{scan_name}/{scan_name}_vh_clean_2.labels.ply"# Modify if you need
-        mapping_file = os.path.join('./output/scannet/' + scan_name, "cluster_lang.npz")# Modify if you need
+        mapping_file = os.path.join('ckpt/' + scan_name, "cluster_lang.npz")# Modify if you need
 
         points, labels = read_labels_from_ply(file_path)
 
