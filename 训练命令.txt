@@ -1,0 +1,52 @@
+CUDA_VISIBLE_DEVICES=0 python train_scannet.py -s data/scannet/scene0200_00 -m output/scannet/scene0200_00 -p ckpt/
+
+watch -n 1 nvidia-smi
+
+source ~/.bashrc && conda activate InstanceGS
+for scene_dir in data/scannet/scene*; do
+  [ -d "$scene_dir" ] || continue
+  scene_name=$(basename "$scene_dir")
+
+  if [ ! -d "$scene_dir/color" ] || [ ! -f "$scene_dir/transforms_train.json" ]; then
+    echo "[SKIP] $scene_name 缺少 color/ 或 transforms_train.json，已跳过"
+    continue
+  fi
+
+  echo "[RUN] $scene_name on GPU 3"
+  CUDA_VISIBLE_DEVICES=3 python train_scannet.py \
+    -s "$scene_dir" \
+    -m "output/scannet/$scene_name" \
+    -p ckpt/
+done
+
+
+source ~/.bashrc && conda activate InstanceGS
+SCENES=(figurines ramen teatime waldo_kitchen)
+PORT_BASE=6100
+i=0
+for s in "${SCENES[@]}"; do
+  root="data/lerf_ovs/$s"
+  [ -d "$root" ] || { echo "[SKIP] $s 目录不存在"; continue; }
+
+  # 自动识别图片目录
+  IMAGES_DIR=""
+  for cand in images color rgb; do
+    if [ -d "$root/$cand" ]; then IMAGES_DIR="$cand"; break; fi
+  done
+  if [ -z "$IMAGES_DIR" ]; then
+    echo "[SKIP] $s 缺少 images/color/rgb 目录，请补齐或创建软链：ln -s <your_images_dir> $root/images"
+    continue
+  fi
+
+  port=$((PORT_BASE + i))
+  echo "[RUN] $s  on GPU 2, images=$IMAGES_DIR, port=$port"
+  CUDA_VISIBLE_DEVICES=2 python train_lerf.py \
+    -s "$root" \
+    -m "output/lerf/$s" \
+    -p ckpt/ \
+    --ip 127.0.0.1 --port $port \
+    --images "$IMAGES_DIR"
+  i=$((i+1))
+done
+
+
