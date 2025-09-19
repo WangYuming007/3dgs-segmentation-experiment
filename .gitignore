@@ -1,14 +1,14 @@
+__pycache__/
 *.pyc
-.vscode
-.git---
-build
-# diff_rasterization/diff_rast.egg-info
-# diff_rasterization/dist
-tensorboard_3d
-screenshots
-*.ipynb_checkpoints
-# submodules/
-# assets/
-# *.npz
-*.bundle
-output
+*.log
+*.pth
+*.ckpt
+*.pt
+runs/
+output/
+outputs/
+wandb/
+data/
+datasets/
+.vscode/
+.idea/
